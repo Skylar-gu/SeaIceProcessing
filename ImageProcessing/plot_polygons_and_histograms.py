@@ -1,4 +1,4 @@
-import monte_carlo_bw as mtc
+import calculate_sic as calc
 import cv2 as cv
 import numpy as np
 import rasterio
@@ -306,9 +306,9 @@ if __name__ == "__main__":
         polygons_checked, polygons_area_checked = use_parameters(results)
 #       save_polygon_img(output_dir_polygons_leads, results, polygons_checked)
 #     
-        sat_img, total_px = mtc.process_image(img) 
-        bl_px, wh_px = mtc.count_pixels(sat_img)
-        sea_ice_conc = mtc.calculate_SIC(bl_px, total_px)
+        sat_img, total_px = calc.process_image(img) 
+        bl_px, wh_px = calc.count_pixels(sat_img)
+        sea_ice_conc = calc.calculate_SIC(bl_px, total_px)
         
         if filename not in output_dict_leads:
             output_dict_leads[filename] = {}
