@@ -11,4 +11,3 @@ def check_pxl_distance(filepath):
     meter_res_pxl = round(geodesic(coord1,coord2).meters,1)
     return meter_res_pxl
 
-check_pxl_distance(filepath)
