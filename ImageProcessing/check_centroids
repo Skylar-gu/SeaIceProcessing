@@ -1,0 +1,21 @@
+from shapely import polygon
+import numpy as np
+
+def check_if_ice(img, polygon_to_check, polygon_area_check):
+  to_remove = set()
+
+  centroids = np.array([Polygon(poly).centroid.coords for poly in polygon_to_check])
+
+  for index, centroid in enumerate(centroids):
+      i,j = centroid[0]
+      i,j=int(i),int(j)
+      if img[j,i] < 100:
+          to_remove.add(index)
+
+  mask = np.ones(len(polygon_to_check), dtype=bool)
+  mask[list(to_remove)] = False
+
+  floes = polygon_to_check[mask]
+  floes_area = polygons_area_checked[mask]
+
+  return floes, floes_area
