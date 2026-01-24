@@ -34,7 +34,7 @@ polygons, areas = gfp.get_polygons(img, low=50, high=150,
                                     kernel=(3,3), area_limit=300)
 ```
 
-Notes:
+### Notes:
 - Detection parameters need tweaking for different lighting conditions
 - Assumes floes are roughly circular when converting area to size
 - Minimum detectable size depends on image resolution (usually 10-50m per pixel)
