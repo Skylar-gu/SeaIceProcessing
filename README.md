@@ -9,7 +9,8 @@ calculate_sic.py: Calculates sea ice concentration
 plot_ice_on_map.py: Overlays the ice images onto proper maps with pressure data from ERA5.
 
 ### Quick Example
-```import get_floes_polygon as gfp
+```
+import get_floes_polygon as gfp
 
 img = gfp.read_image('path/to/satellite_image.tif')
 polygons, areas = gfp.get_polygons(img, low=50, high=150, 
