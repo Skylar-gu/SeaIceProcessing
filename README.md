@@ -16,7 +16,15 @@ Analyses satellite images of sea ice to automatically detect and measure ice flo
 
 - **`plot_ice_on_map.py`**  
   Overlays detected ice floes onto georeferenced maps, including pressure data from ERA5.
-  
+
+How It Works:
+1. Convert image to binary (ice vs not-ice)
+2. Find edges using Canny edge detection
+3. Turn edges into closed polygons
+4. Filter out bad polygons (too small, nested inside others, etc.)
+5. Check that polygon centres are actually on ice
+6. Calculate areas and plot size distributions
+
 ### Example Usage
 ```
 import get_floes_polygon as gfp
