@@ -17,7 +17,7 @@ Analyses satellite images of sea ice to automatically detect and measure ice flo
 - **`plot_ice_on_map.py`**  
   Overlays detected ice floes onto georeferenced maps, including pressure data from ERA5.
 
-How It Works:
+### Methodological Process:
 1. Convert image to binary (ice vs not-ice)
 2. Find edges using Canny edge detection
 3. Turn edges into closed polygons
