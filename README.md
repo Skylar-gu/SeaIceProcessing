@@ -17,7 +17,7 @@ Analyses satellite images of sea ice to automatically detect and measure ice flo
 - **`plot_ice_on_map.py`**  
   Overlays detected ice floes onto georeferenced maps, including pressure data from ERA5.
   
-### Quick Example
+### Example Usage
 ```
 import get_floes_polygon as gfp
 
@@ -25,3 +25,8 @@ img = gfp.read_image('path/to/satellite_image.tif')
 polygons, areas = gfp.get_polygons(img, low=50, high=150, 
                                     kernel=(3,3), area_limit=300)
 ```
+
+Notes:
+- Detection parameters need tweaking for different lighting conditions
+- Assumes floes are roughly circular when converting area to size
+- Minimum detectable size depends on image resolution (usually 10-50m per pixel)
